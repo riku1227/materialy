@@ -569,6 +569,11 @@
   padding: 16px;
 }
 
+.materialy-layout--padding-top-bottom-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .materialy-layout--space {
   margin: 8px;
 }
