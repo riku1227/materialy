@@ -1,0 +1,53 @@
+.materialy-ripple {
+    position: relative;
+    overflow: hidden;
+
+    &__base-accent {
+        @extend .materialy-ripple;
+    }
+    &__accent {
+        @extend .materialy-ripple;
+    }
+    &__base-primary {
+        @extend .materialy-ripple;
+    }
+    &__primary {
+        @extend .materialy-ripple;
+    }
+
+    &--effect {
+        position: absolute;
+        background-color: var(--materialy-surface-overlay-color);
+        border-radius: 50%;
+        transform: scale(0);
+        opacity: 0.24;
+        animation: materialy-ripple--effect-animation 0.8s;
+        pointer-events: none;
+
+        &__base-accent {
+            @extend .materialy-ripple--effect;
+            background-color: var(--materialy-accent-text-color);
+        }
+        &__accent {
+            @extend .materialy-ripple--effect;
+            background-color: var(--materialy-accent-color);
+            opacity: 0.45;
+        }
+        &__base-primary {
+            @extend .materialy-ripple--effect;
+            background-color: var(--materialy-primary-text-color);
+        }
+        &__primary {
+            @extend .materialy-ripple--effect;
+            background-color: var(--materialy-primary-color);
+            opacity: 0.45;
+        }
+    }
+}
+
+@keyframes materialy-ripple--effect-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

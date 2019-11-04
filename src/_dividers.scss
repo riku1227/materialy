@@ -1,0 +1,15 @@
+.materialy-dividers {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top-color: var(--materialy-dividers-color);
+    border-top-width: 1px;
+    border-top-style: solid;
+    &__no-padding {
+        @extend .materialy-dividers;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}

@@ -1,0 +1,120 @@
+@import "typography";
+@import "elevation";
+
+.materialy-button {
+    @include materialy-typography(button);
+    display: inline-flex;
+    align-items: center;
+    justify-items: center;
+    margin: 4px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    color: var(--materialy-text-color);
+    text-decoration: none;
+    background-color: var(--materialy-button-default-color);
+    border: none;
+    border-radius: 4px;
+    @include elevation(2);
+    &:active {
+        border: none;
+        outline: none;
+    }
+    &:focus {
+        border: none;
+        outline: none;
+    }
+    &:hover {
+        @include elevation(8);
+    }
+
+    &__accent {
+        @extend .materialy-button;
+        color: var(--materialy-accent-text-color);
+        background-color: var(--materialy-accent-color);
+    }
+
+    &__primary {
+        @extend .materialy-button;
+        color: var(--materialy-primary-text-color);
+        background-color: var(--materialy-primary-color);
+    }
+
+    &--text {
+        @extend .materialy-button;
+        color: var(--materialy-text-color-high);
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none;
+        &:hover {
+            background-color: var(--materily-surface-hover-color);
+            box-shadow: none;
+        }
+
+        &__accent {
+            @extend .materialy-button--text;
+            color: var(--materialy-accent-color);
+            &:hover {
+                background-color: var(--materialy-accent-hover-color);
+            }
+        }
+
+        &__primary {
+            @extend .materialy-button--text;
+            color: var(--materialy-primary-color);
+            &:hover {
+                background-color: var(--materialy-primary-hover-color);
+            }
+        }
+    }
+
+    &--outline {
+        @extend .materialy-button--text;
+        color: var(--materialy-text-color-high);
+        border-color: var(--materialy-text-color-high);
+        border-style: solid;
+        border-width: 1px;
+        &:hover {
+            background-color: var(--materily-surface-hover-color);
+        }
+        &:focus {
+            border-color: var(--materialy-text-color-high);
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        &__accent {
+            @extend .materialy-button--outline;
+            color: var(--materialy-accent-color);
+            border-color: var(--materialy-accent-color);
+
+            &:hover {
+                background-color: var(--materialy-accent-hover-color);
+            }
+            &:focus {
+                border-color: var(--materialy-accent-color);
+            }
+        }
+
+        &__primary {
+            @extend .materialy-button--outline;
+            color: var(--materialy-primary-color);
+            border-color: var(--materialy-primary-color);
+
+            &:hover {
+                background-color: var(--materialy-primary-hover-color);
+            }
+            &:focus {
+                border-color: var(--materialy-primary-color);
+            }
+        }
+    }
+
+    &--icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        margin-left: 0px;
+        font-size: 18px;
+    }
+}

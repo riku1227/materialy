@@ -1,0 +1,78 @@
+@mixin materialy-typography($type: body2) {
+    @if $type == headline1 {
+        font-size: 5.99rem;
+    } @else if $type == headline2 {
+        font-size: 3.744rem;
+    } @else if $type == headline3 {
+        font-size: 2.995rem;
+    } @else if $type == headline4 {
+        font-size: 2.122rem;
+    } @else if $type == headline5 {
+        font-size: 1.498rem;
+    } @else if $type == headline6 {
+        font-size: 1.248rem;
+    } @else if $type == subtitle1 {
+        font-size: 0.998rem;
+    } @else if $type == subtitle2 {
+        font-size: 0.874rem;
+    } @else if $type == body1 {
+        font-size: 0.998rem;
+    } @else if $type == body2 {
+        font-size: 0.874rem;
+    } @else if $type == button {
+        font-size: 0.874rem;
+    }
+}
+
+.materialy-typography {
+    &__headline1 {
+        @include materialy-typography(headline1);
+        color: var(--materialy-text-color);
+        font-weight: 300;
+    }
+    &__headline2 {
+        @include materialy-typography(headline2);
+        color: var(--materialy-text-color);
+        font-weight: 300;
+    }
+    &__headline3 {
+        @include materialy-typography(headline3);
+        color: var(--materialy-text-color);
+        font-weight: 400;
+    }
+    &__headline4 {
+        @include materialy-typography(headline4);
+        color: var(--materialy-text-color);
+        font-weight: 400;
+    }
+    &__headline5 {
+        @include materialy-typography(headline5);
+        color: var(--materialy-text-color);
+        font-weight: 400;
+    }
+    &__headline6 {
+        @include materialy-typography(headline6);
+        color: var(--materialy-text-color);
+        font-weight: 400;
+    }
+    &__subtitle1 {
+        @include materialy-typography(subtitle1);
+        color: var(--materialy-text-color-high);
+        font-weight: 400;
+    }
+    &__subtitle2 {
+        @include materialy-typography(subtitle2);
+        color: var(--materialy-text-color-high);
+        font-weight: 700;
+    }
+    &__body1 {
+        @include materialy-typography(body1);
+        color: var(--materialy-text-color-medium);
+        font-weight: 400;
+    }
+    &__body2 {
+        @include materialy-typography(body2);
+        color: var(--materialy-text-color-medium);
+        font-weight: 400;
+    }
+}

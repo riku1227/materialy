@@ -1,0 +1,116 @@
+@import "variables";
+@import "typography";
+
+.materialy-navigation-drawer {
+    position: fixed;
+    top: var(--materialy-top-app-bar-height);
+    left: 0;
+    z-index: 0;
+    width: 256px;
+    height: 100%;
+    background-color: var(--materialy-surface-color);
+    border-right-color: var(--materialy-dividers-color);
+    border-right-width: 1px;
+    border-right-style: solid;
+    transform: translateX(-105%);
+    transition: 0.3s ease-in-out;
+
+    &__full-height {
+        top: 0px;
+    }
+
+    &__modal {
+        top: 0px;
+        z-index: 99;
+        width: 85%;
+        max-width: 256px;
+        border-right: none;
+
+        &--scrim {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 49;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: var(--materialy-scrim-color);
+
+            &__open {
+                display: block;
+                animation: materialy-navigation-drawer__modal--scrim__open 0.5s
+                    forwards;
+            }
+        }
+    }
+
+    &__open {
+        transform: translateX(0%);
+    }
+
+    &--content {
+        display: flex;
+        flex: 0 0;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &--item {
+            display: flex;
+            align-items: center;
+            width: calc(100% - 16px);
+            min-height: 1.5rem;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 16px;
+            color: var(--materialy-text-color-high);
+            font-weight: normal;
+            text-decoration: none;
+            @include materialy-typography(body1);
+
+            & i {
+                margin-right: 24px;
+                user-select: none;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background-color: var(--materily-surface-hover-color);
+            }
+            /* &:active {
+        background-color: var(--materily-surface-active-color);
+      } */
+
+            &--header {
+                padding-bottom: 28px;
+                padding-left: 16px;
+            }
+
+            &--title {
+                padding-top: 28px;
+                padding-left: 16px;
+                color: var(--materialy-text-color);
+                @include materialy-typography(headline6);
+            }
+
+            &--subtitle {
+                padding-top: 28px;
+                padding-left: 16px;
+                color: var(--materialy-text-color-medium);
+                @include materialy-typography(subtitle2);
+            }
+        }
+    }
+}
+
+@keyframes materialy-navigation-drawer__modal--scrim__open {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

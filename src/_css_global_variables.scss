@@ -1,0 +1,72 @@
+@import "variables";
+
+:root {
+    --materialy-top-app-bar-height: 56px;
+
+    --materialy-accent-color: rgb(255, 87, 34);
+    --materialy-accent-hover-color: rgba(255, 87, 34, 0.15);
+    --materialy-primary-color: rgb(156, 39, 176);
+    --materialy-primary-hover-color: rgba(156, 39, 176, 0.2);
+    --materialy-accent-text-color: #ffffff;
+    --materialy-primary-text-color: #ffffff;
+
+    --materialy-surface-color: #ffffff;
+    --materialy-surface-overlay-color: #000000;
+    --materily-surface-hover-color: rgba(0, 0, 0, 0.04);
+    --materily-surface-active-color: rgba(0, 0, 0, 0.26);
+
+    --materialy-text-color: #000000;
+    --materialy-text-color-high: #212121;
+    --materialy-text-color-medium: #666666;
+    --materialy-text-color-disabled: #9e9e9e;
+
+    --materialy-dividers-color: rgba(0, 0, 0, 0.12);
+    --materialy-scrim-color: rgba(0, 0, 0, 0.32);
+    --materialy-button-default-color: rgba(0, 0, 0, 0.18);
+    --materialy-card-background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --materialy-accent-color: rgb(255, 137, 101);
+        --materialy-accent-hover-color: rgba(255, 137, 101, 0.2);
+        --materialy-primary-color: rgb(206, 147, 216);
+        --materialy-primary-hover-color: rgba(206, 147, 216, 0.2);
+        --materialy-accent-text-color: #000000;
+        --materialy-primary-text-color: #000000;
+
+        --materialy-surface-color: #121212;
+        --materialy-surface-overlay-color: #ffffff;
+        --materily-surface-hover-color: rgba(255, 255, 255, 0.08);
+        --materily-surface-active-color: rgba(255, 255, 255, 0.24);
+
+        --materialy-text-color: #ffffff;
+        --materialy-text-color-high: #e0e0e0;
+        --materialy-text-color-medium: #a0a0a0;
+        --materialy-text-color-disabled: #6c6c6c;
+
+        --materialy-dividers-color: rgba(255, 255, 255, 0.12);
+        --materialy-scrim-color: rgba(255, 255, 255, 0.08);
+        --materialy-button-default-color: rgba(255, 255, 255, 0.18);
+        --materialy-card-background-color: #1d1d1d;
+    }
+}
+
+//Mobile
+@media screen and (max-width: 896px) {
+    :root {
+        --materialy-top-app-bar-height: 56px;
+    }
+}
+
+//Desktop/Tablet
+@media screen and (min-width: 897px) {
+    :root {
+        --materialy-top-app-bar-height: 64px;
+    }
+}
