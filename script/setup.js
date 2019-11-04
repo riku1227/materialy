@@ -79,11 +79,11 @@
         });
     }
 
-    loadFile("https://riku1227.github.io/module/header.html", (html) => {
+    loadFile("https://riku1227.github.io/materialy/module/header.html", (html) => {
         document.getElementsByClassName("materialy-app-bar-top")[0].innerHTML = html;
         setupHeader();
     });
-    loadFile("https://riku1227.github.io/module/navigation-drawer.html", setupNavigationDrawer);
+    loadFile("https://riku1227.github.io/materialy/module/navigation-drawer.html", setupNavigationDrawer);
 
     const rippleEffect = (event) => {
         const target = event.target;
