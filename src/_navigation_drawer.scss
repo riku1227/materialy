@@ -58,6 +58,58 @@
         overflow-x: hidden;
         overflow-y: auto;
 
+        &--container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 1.5rem;
+
+            & > input {
+                display: none;
+                &:checked {
+                    & + label {
+                        &:before {
+                            content: "▼　";
+                        }
+                    }
+
+                    & ~ div {
+                        display: flex;
+                    }
+                }
+            }
+
+            & > label {
+                box-sizing: border-box;
+                padding: 0;
+                padding-left: 16px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                color: var(--materialy-text-color-high);
+                font-weight: normal;
+                text-decoration: none;
+                width: 100%;
+                user-select: none;
+                @include materialy-typography(body1);
+                &:hover {
+                    background-color: var(--materily-surface-hover-color);
+                }
+                &:before {
+                    content: "▶　";
+                }
+            }
+
+            & > div {
+                box-sizing: border-box;
+                display: none;
+                flex: 0 0;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                width: 100%;
+                padding-left: 16px;
+            }
+        }
+
         &--item {
             display: flex;
             align-items: center;
@@ -69,6 +121,7 @@
             color: var(--materialy-text-color-high);
             font-weight: normal;
             text-decoration: none;
+            user-select: none;
             @include materialy-typography(body1);
 
             & i {
