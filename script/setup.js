@@ -17,7 +17,7 @@
         const navigationDrawerScrim = document.getElementsByClassName("materialy-navigation-drawer__modal--scrim")[0];
         const mainContent = document.getElementsByClassName("materialy-content")[0]
 
-        if(window.innerWidth <= 896) {
+        if (window.innerWidth <= 896) {
             navigationDrawer.classList.add("materialy-navigation-drawer__modal");
         } else {
             navigationDrawer.classList.remove("materialy-navigation-drawer__modal");
@@ -146,8 +146,51 @@
         elem.addEventListener('click', rippleEffect);
     });
 
+    const textFieldEffect = (elem) => {
+        const children = elem.children;
+        let input = undefined;
+        let hint = undefined;
+        Array.from(children).forEach((it) => {
+            if (it.classList.contains("materialy-text-field--input")) {
+                input = it
+            } else if (it.classList.contains("materialy-text-field--border") ||
+                it.classList.contains("materialy-text-field--border__accent") ||
+                it.classList.contains("materialy-text-field--border__primary")) {
+                Array.from(it.children).forEach((x) => {
+                    if (x.classList.contains("materialy-text-field--border--hint")) {
+                        hint = x.children[0];
+                    }
+                });
+            }
+        });
+
+        if (hint != undefined) {
+            input.addEventListener("focus", function (e) {
+                var style = window.getComputedStyle(input);
+                const inputFontSize = parseFloat(style.height) / 16;
+                const translateSize = ((inputFontSize) * 8 + 7 + inputFontSize * 0.5) - parseInt(parseFloat(style.height) / 16);
+                console.log(inputFontSize + " : " + translateSize)
+                hint.style.transform = `translateY(-${translateSize}px) scale(0.75,0.75)`;
+            });
+
+            input.addEventListener("blur", function (e) {
+                if (e.target.value === "") {
+                    hint.style.transform = "";
+                }
+            });
+        }
+    }
+
+    Array.from(document.querySelectorAll('.materialy-text-field')).forEach((elem) => {
+        textFieldEffect(elem);
+    });
+
+    Array.from(document.querySelectorAll('.materialy-text-field')).forEach((elem) => {
+        textFieldEffect(elem);
+    });
+
     let timer = 0;
-    window.onresize =  () => {
+    window.onresize = () => {
         if (timer > 0) {
             clearTimeout(timer);
         }
