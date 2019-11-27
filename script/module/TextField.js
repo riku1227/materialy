@@ -73,7 +73,7 @@ export class TextField {
 
     static autoUpdateTextFields() {
         document.querySelectorAll('.materialy-text-field').forEach((element) => {
-            TextField.updateTextFieldOnDiv(element);
+            TextField.updateTextFieldByDiv(element);
         });
     }
 
