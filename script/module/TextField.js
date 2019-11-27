@@ -19,7 +19,7 @@ export class TextField {
         });
 
         if (hint != undefined) {
-            this.updateTextField(input, hint, false);
+            TextField.updateTextField(input, hint, false);
         }
     }
 
@@ -67,13 +67,13 @@ export class TextField {
 
     static autoSetupTextFieldEffect() {
         document.querySelectorAll('.materialy-text-field').forEach((element) => {
-            this.addTextFieldEffect(element);
+            TextField.addTextFieldEffect(element);
         });
     }
 
     static autoUpdateTextFields() {
         document.querySelectorAll('.materialy-text-field').forEach((element) => {
-            this.updateTextFieldOnDiv(element);
+            TextField.updateTextFieldOnDiv(element);
         });
     }
 
@@ -86,11 +86,11 @@ export class TextField {
     }
 
     static getValueByTextFieldDiv(textFieldDiv) {
-        return this.getInputByTextFieldDiv(textFieldDiv).value;
+        return TextField.getInputByTextFieldDiv(textFieldDiv).value;
     }
 
     static setValueByTextFieldDiv(textFieldDiv, value) {
-        this.getInputByTextFieldDiv(textFieldDiv).value = value;
-        this.updateTextFieldByDiv(textFieldDiv);
+        TextField.getInputByTextFieldDiv(textFieldDiv).value = value;
+        TextField.updateTextFieldByDiv(textFieldDiv);
     }
 }
