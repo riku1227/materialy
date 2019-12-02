@@ -1,0 +1,101 @@
+.materialy-checkbox {
+
+    display: none;
+
+    & + label {
+        position: relative;
+        padding-left: 40px;
+        position:relative;
+        height: 24px;
+        font-size: 1.2rem;
+
+        &:before {
+            font-family: "Material Icons";
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            content: "";
+            border-style: solid;
+            border-color: var(--materily-surface-active-color);
+            border-width: 2px;
+            margin-top: -12px;
+            margin-left: 8px;
+        }
+
+        &:hover {
+            &:before {
+                border-color: var(--materialy-text-color-medium);
+            }
+        }
+    }
+
+    &:checked + label {
+        &:before {
+            content: "\e5ca";
+            color: var(--materialy-surface-overlay-color);
+            border-color: var(--materialy-surface-overlay-color);
+            &:before {
+                color: var(--materialy-text-color-medium);
+                border-color: var(--materialy-text-color-medium);
+            }
+        }
+
+        &:hover {
+            &:before {
+                border-color: var(--materialy-text-color-medium);
+            }
+        }
+    }
+
+    &__accent {
+        @extend .materialy-checkbox;
+        & + label {
+            &:hover {
+                &:before {
+                    border-color: var(--materialy-accent-hover-color);
+                }
+            }
+        }
+        &:checked + label {
+            &:before {
+                content: "\e5ca";
+                color: var(--materialy-accent-color);
+                border-color: var(--materialy-accent-color);
+            }
+            &:hover {
+                &:before {
+                    color: var(--materialy-accent-hover-color);
+                    border-color: var(--materialy-accent-hover-color);
+                }
+            }
+        }
+    }
+
+    &__primary {
+        & + label {
+            &:hover {
+                &:before {
+                    border-color: var(--materialy-primary-hover-color);
+                }
+            }
+        }
+        @extend .materialy-checkbox;
+        &:checked + label {
+            &:before {
+                content: "\e5ca";
+                color: var(--materialy-primary-color);
+                border-color: var(--materialy-primary-color);
+            }
+
+            &:hover {
+                &:before {
+                    color: var(--materialy-primary-hover-color);
+                    border-color: var(--materialy-primary-hover-color);
+                }
+            }
+        }
+    }
+}
